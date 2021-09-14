@@ -49,31 +49,7 @@ buildTable(myArray)
 
 // search
 
-$('#input-search').on('keyup', function(){
 
-  var value = $(this).val()
-  console.log(value)
-  var data = Search(value, myArray)
-  buildTable(data)
- 
- })
-
-function Search(value, data) {
-
-  var filteredData = []
-  
-  for (var i = 0; i < data.lenght; i++) {
-  
-    value = value.toLowerCase()
-    var name = data[i].name.toLowerCase()
-  
-    if (name.includes(value)) {
-      filteredData.push(data[i])
-    }
-  
-  }
-  
-  }
 
   // add/delete item's
 
@@ -81,48 +57,69 @@ const firstinput = document.getElementById("input-field-name-1")
 const secondinput = document.getElementById("input-field-name-2")
 const thirdinput = document.getElementById("input-field-name-3")
 
-const add_btn = document.getElementById("button2")
+const add_btn = document.getElementById("button-add-item")
 
-const rm_btn = document.getElementById("button1")
+const rm_btn = document.getElementById("button-delete-item")
 
 const table_ = document.getElementById("actual-table-1")
 
 add_btn.addEventListener('click', () => {
 
-  const new_ = document.createElement("tr")
-  table_.appendChild(new_)
+var row = table_.insertRow(0)
 
-  new_.className = "eo"
+var cell1 = row.insertCell(0)
+var cell2 = row.insertCell(0)
+var cell3 = row.insertCell(0)
 
-  adding = false
+cell1.innerHTML = firstinput.value
+cell2.innerHTML = secondinput.value
+cell3.innerHTML = thirdinput.value
 
-  if(table_.appendChild(new_)) {
+if(firstinput.value == '' || secondinput.value == '' || thirdinput.value == '') {
 
-    const new_1 = document.createElement("td")
-    new_.appendChild(new_1)
-    new_1.textContent = firstinput.value
+  cell1.innerHTML = "nie podano roku produkcji."
+  cell2.innerHTML = "nie podano modelu pojazdu."
+  cell3.innerHTML = "nie podano marki pojazdu."
 
-    const new_2 = document.createElement('td')
-    new_.appendChild(new_2)
-    new_2.textContent = secondinput.value
+}
 
-    const new_3 = document.createElement('td')
-    new_.appendChild(new_3)
-    new_3.textContent = thirdinput.value
 
-    
-  
-  }
+})
 
-  rm_btn.addEventListener("click", () => {
+rm_btn.addEventListener("click", () => {
 
-  table_.remove(new_)
+  table_.deleteRow(0);
   
   
   })
 
-})
+$("#input-search").keyup(function () {
+  var value = $(this).val();
 
+  if (value.length){
+      $("table tr").each(function (index) {
+          if (index != 0) {
 
+              $row = $(this);
 
+              $row.find("td").each(function () {
 
+              var cell = $(this).text();
+
+              if (cell.indexOf(value) < 0) {
+                  $row.hide();
+              } else {
+                  $row.show();
+                  return false;
+          }
+
+      });
+  }
+});
+}
+else{
+  
+  $("table tr").show();
+
+}
+});
