@@ -6,7 +6,7 @@
 
 section {
     position: fixed;
-    background-color: #f3f3f3;
+    background: url(../img/background.jpg);
     width: 100%;
     height: 100%;
 }
@@ -17,6 +17,10 @@ h1 {
 
 p {
     display: block; 
+}
+
+img {
+    height: 100%;
 }
 
 span {
@@ -32,14 +36,13 @@ width: 100%;
 #menu {
 width: 100%;
 height: 100px;
-background: white;
--webkit-box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.3); 
-box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.3);
+background: #ffffff;
+-webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.3); 
+box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.3);
 }
 
 #table-1 {
 position: relative;
-top: 25px;
 }
 
 #sort-section {
@@ -50,17 +53,63 @@ top: 15px;
 
 #container-of-items {
 width: 90%;
-height: 520px;
-margin-top: 10px;
-background: white;
+height: 730px;
+margin-top: 25px;
 -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.3); 
 box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.3);
 }
 
-.line {
-display: block;
-height: 1px;
-width: 100%;
-margin-top: 10px;
-background: #c4c4c4;
+#container-of-search-add {
+    margin-top: 20px;
+    width: 100%;
+}
+
+#container-of-add-option {
+    margin-top: 5px;
+    height: 50px;
+    width: 100%;
+}
+
+#button1 {
+
+width: 50%;
+margin: 5px;
+
+}
+
+#button2 {
+
+width: 50%;
+margin: 5px;
+
+}
+
+@media (max-width:599px) {
+
+    th {
+        font-size: 3.25vw;
+    }
+
+    ::placeholder {
+        font-size: 3.25vw;
+    }
+
+    #container-of-add-option {
+        flex-direction: column;
+        height: 15%;
+    }
+
+    #button1 {
+
+        width: 95%;
+        align-self: center;
+        
+        }
+        
+        #button2 {
+        
+        width: 95%;
+        
+        }
+
 }

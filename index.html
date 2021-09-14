@@ -13,71 +13,33 @@
         <div class="container-fluid">
             <div class="row d-flex flex-column">
                 <div class="col-md-6 d-flex" id="menu">
-                    <h1 class="align-self-center">Samochody</h1>
+                    <img class="align-self-center" src="./img/logo.jpg" alt="company-logo"></img>
                     
                 </div>
-                <div class="col-md-6 d-flex align-self-center flex-column" id="container-of-items">
+                <div class="col-md-6 d-flex align-self-center flex-column bg-light" id="container-of-items">
                 <div class="col-md-12 d-flex justify-content-start bg-light" id="sort-section">
-                <select placeholder="sortuj">
-                    <option value="alphabetic">Alfabetycznie</option>
-                    <option value="oldest">Od najstarszego rocznika</option>
-                    <option value="newest">Od najnowszego rocznika</option>
-                </select>
+               
+                <input id="input-search" class="form-control" style="margin: 5px;" placeholder="wyszukaj pojazd" type="text"/>
+                </div>
+                <div class="col-md-6 d-flex align-self-center bg-light" id="container-of-search-add">
+                    <input id="input-field-name-1" class="form-control" style="margin: 5px;" placeholder="wpisz markę pojazdu" type="text"/>
+                    <input id="input-field-name-2" class="form-control" style="margin: 5px;" placeholder="wpisz model pojazdu" type="text"/>
+                    <input id="input-field-name-3" class="form-control" style="margin: 5px;" placeholder="wpisz rok produkcji" type="text"/>
+                </div>
+                <div class="col-md-6 d-flex align-self-center  bg-light " id="container-of-add-option">
+                <button class="btn btn-warning" id="button2"><i class="fas fa-plus-circle"></i></button>
+                <button class="btn btn-warning" id="button1"><i class="fas fa-minus-circle"></i></button>
                 </div>
                 <table class="table table-light table-striped" id="table-1">
                     <thead>
                       <tr>
-                        <th>Marka pojazdu</th>
-                        <th>Model pojazdu</th>
-                        <th>Rok produkcji</th>
+                        <th data-column="brand" data-order="desc">Marka pojazdu &#9650</th>
+                        <th data-column="production" data-order="desc">Model pojazdu &#9650</th>
+                        <th data-column="model" data-order="desc">Rok produkcji &#9650</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>Ford</td>
-                        <td>Focus</td>
-                        <td>1998</td>
-                      </tr>
-                      <tr>
-                        <td>Mazda</td>
-                        <td>MX-5</td>
-                        <td>2005</td>
-                      </tr>
-                      <tr>
-                        <td>Skoda</td>
-                        <td>Citigo</td>
-                        <td>2011</td>
-                      </tr>
-                      <tr>
-                        <td>Ford</td>
-                        <td>Focus</td>
-                        <td>1998</td>
-                      </tr>
-                      <tr>
-                        <td>Mazda</td>
-                        <td>MX-5</td>
-                        <td>2005</td>
-                      </tr>
-                      <tr>
-                        <td>Skoda</td>
-                        <td>Citigo</td>
-                        <td>2011</td>
-                      </tr>
-                      <tr>
-                        <td>Ford</td>
-                        <td>Focus</td>
-                        <td>1998</td>
-                      </tr>
-                      <tr>
-                        <td>Mazda</td>
-                        <td>MX-5</td>
-                        <td>2005</td>
-                      </tr>
-                      <tr>
-                        <td>Skoda</td>
-                        <td>Citigo</td>
-                        <td>2011</td>
-                      </tr>
+                    <tbody id="actual-table-1">
+                      
                     </tbody>
                   </table>
             </div>
@@ -85,5 +47,8 @@
         </div>
     </section>
 </body>
-<script src="jquery-3.5.1.min.js"></script>
+<script src="https://kit.fontawesome.com/0b34db6392.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/script.js"></script>
+
 </html>
