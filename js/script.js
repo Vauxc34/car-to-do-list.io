@@ -95,33 +95,12 @@ rm_btn.addEventListener("click", () => {
   
   })
 
-$("#input-search").keyup(function () {
-  var value = $(this).val();
-
-  if (value.length){
-      $("table tr").each(function (index) {
-          if (index != 0) {
-
-              $row = $(this);
-
-              $row.find("td").each(function () {
-
-              var cell = $(this).text();
-
-              if (cell.indexOf(value) < 0) {
-                  $row.hide();
-              } else {
-                  $row.show();
-                  return false;
-          }
-
-      });
-  }
-});
-}
-else{
-  
-  $("table tr").show();
-
-}
+var $rows = $('table tr');
+$('#input-search').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
 });
