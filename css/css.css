@@ -32,6 +32,10 @@ select {
 width: 100%;
 }
 
+thead {
+    cursor: pointer;
+}
+
 
 #menu {
 width: 100%;

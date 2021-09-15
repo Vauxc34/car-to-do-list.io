@@ -65,6 +65,7 @@ const table_ = document.getElementById("actual-table-1")
 
 const row = document.querySelector('td')
 
+
 add_btn.addEventListener('click', () => {
 
 var row = table_.insertRow(0)
